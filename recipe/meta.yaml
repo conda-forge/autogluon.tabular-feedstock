@@ -13,6 +13,8 @@ build:
   noarch: python
   number: 2
   script: {{ PYTHON }} -m pip install ./tabular -vv
+  script_env:
+   - RELEASE=1
 
 requirements:
   host:
