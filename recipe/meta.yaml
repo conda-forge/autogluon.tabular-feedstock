@@ -27,6 +27,11 @@ requirements:
     - pandas !=1.4.0,<1.6,>=1.2.5
     - scikit-learn <1.2,>=1.0.0
     - networkx <3.0,>=2.3
+    - pytorch <1.13,>=1.9
+    - lightgbm
+    - catboost
+    - xgboost
+    # - fastai  # not available on conda-forge yet
     - autogluon.core =={{ version }}
     - autogluon.features =={{ version }}
 
