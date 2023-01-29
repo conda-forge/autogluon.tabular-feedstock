@@ -10,27 +10,33 @@ source:
   sha256: 96075e9bfce79420fe78a5566a1ba82f9a80598e955f4a4fc490f5561ede70bd
 
 build:
-  noarch: python
-  number: 4
+  # noarch: python
+  skip: True  # [py>=310]
+  number: 5
   script: {{ PYTHON }} -m pip install ./tabular -vv
   script_env:
    - RELEASE=1
 
 requirements:
+  build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy  <1.24,>=1.21                    # [build_platform != target_platform]
   host:
-    - python >=3.7,<3.10
+    - python # >=3.7,<3.10
     - pip
   run:
-    - python >=3.7,<3.10
+    - python # >=3.7,<3.10
     - numpy <1.24,>=1.21
     - scipy <1.10.0,>=1.5.4
     - pandas !=1.4.0,<1.6,>=1.2.5
     - scikit-learn <1.2,>=1.0.0
     - networkx <3.0,>=2.3
-    - pytorch <1.13,>=1.9
+    - pytorch <1.13,>=1.9  # [not win]
     - lightgbm
-    - catboost
     - xgboost
+    - catboost  # [not arm64]
     # - fastai  # not available on conda-forge yet
     - autogluon.core =={{ version }}
     - autogluon.features =={{ version }}
