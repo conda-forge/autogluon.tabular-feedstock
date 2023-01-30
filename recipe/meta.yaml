@@ -12,7 +12,7 @@ source:
 build:
   # noarch: python
   skip: True  # [py>=310]
-  number: 5
+  number: 6
   script: {{ PYTHON }} -m pip install ./tabular -vv
   script_env:
    - RELEASE=1
@@ -36,7 +36,7 @@ requirements:
     - pytorch <1.13,>=1.9  # [not win]
     - lightgbm
     - xgboost
-    - catboost  # [not arm64]
+    - catboost  
     # - fastai  # not available on conda-forge yet
     - autogluon.core =={{ version }}
     - autogluon.features =={{ version }}
