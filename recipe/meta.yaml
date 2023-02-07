@@ -12,7 +12,7 @@ source:
 build:
   # noarch: python
   skip: True  # [py>=310]
-  number: 6
+  number: 7
   script: {{ PYTHON }} -m pip install ./tabular -vv
   script_env:
    - RELEASE=1
@@ -37,7 +37,7 @@ requirements:
     - lightgbm
     - xgboost
     - catboost  
-    # - fastai  # not available on conda-forge yet
+    - fastai  
     - autogluon.core =={{ version }}
     - autogluon.features =={{ version }}
 
