@@ -37,7 +37,7 @@ requirements:
     - lightgbm
     - xgboost
     - catboost  
-    - fastai  
+    - fastai  # [not win]   
     - autogluon.core =={{ version }}
     - autogluon.features =={{ version }}
 
