@@ -1,5 +1,5 @@
 {% set name = "autogluon.tabular" %}
-{% set version = "0.6.2" %}
+{% set version = "0.6.3" %}
 
 package:
   name: {{ name|lower }}
@@ -14,8 +14,8 @@ source:
 
 build:
   # noarch: python
-  skip: True  # [py>=310]
-  number: 7
+  skip: True  # [py>=311]
+  number: 0
   script: {{ PYTHON }} -m pip install ./tabular -vv
   script_env:
    - RELEASE=1
