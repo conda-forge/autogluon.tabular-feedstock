@@ -15,7 +15,7 @@ build:
   number: 1
   script: {{ PYTHON }} -m pip install ./tabular -vv
   script_env:
-   - RELEASE=1
+    - RELEASE=1
 
 requirements:
   build:
