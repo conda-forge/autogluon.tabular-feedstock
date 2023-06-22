@@ -10,9 +10,9 @@ source:
   sha256: 4c792085a9382eb481ecec25389692f28e961c1e83ed08bdfea0d23ec8c89069
 
 build:
-  # noarch: python
-  skip: true  # [py>=311]
-  number: 0
+  noarch: python
+  # skip: true  # [py>=311]
+  number: 1
   script: {{ PYTHON }} -m pip install ./tabular -vv
   script_env:
     - RELEASE=1
@@ -25,22 +25,22 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy  >=1.21,<1.27                    # [build_platform != target_platform]
   host:
-    - python # >=3.8,<3.11
+    - python >=3.8,<3.11
     - pip
   run:
   # see deps in https://github.com/autogluon/autogluon/blob/master/tabular/setup.py
   # dep versions defined in https://github.com/autogluon/autogluon/blob/master/core/src/autogluon/core/_setup_utils.py
-    - python # >=3.8,<3.11
+    - python >=3.8,<3.11
     - numpy >=1.21,<1.27  
     - scipy >=1.5.4,<1.12
     - pandas >=1.4.1,<1.6
     - scikit-learn >=1.0,<1.3
     - networkx >=3.0,<4
-    - pytorch >=1.9,<1.14  # [not win]
+    - pytorch >=1.9,<1.14  
     - lightgbm >=3.3,<3.4
     - xgboost >=1.6,<1.8
     - catboost >=1.0,<1.2 
-    - fastai >=2.3.1,<2.8  # [not win]   
+    - fastai >=2.3.1,<2.8     
     - autogluon.core =={{ version }}
     - autogluon.features =={{ version }}
 
