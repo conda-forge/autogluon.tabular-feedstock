@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/autogluon/autogluon/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 381ca65386793cc304bf4d439622f33553dc6c7afa09a22a2be4584319a8bf09
+  url: https://github.com/autogluon/autogluon/archive/6af92e149491f6e5062495d87306b3625d12d992.tar.gz
+  sha256: a55be8adcd361c1c75275205783a0563d0aef684bb23ea78e563c05bbf094969
 
 build:
   noarch: python
   # skip: true  # [py>=311]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install ./tabular -vv
   script_env:
     - RELEASE=1
@@ -36,10 +36,10 @@ requirements:
     - pandas >=1.4.1,<1.6
     - scikit-learn >=1.0,<1.3
     - networkx >=3.0,<4
-    - pytorch >=1.9,<1.14
+    - pytorch >=1.13,<2.1
     - lightgbm >=3.3,<3.4
     - xgboost >=1.6,<1.8
-    - catboost >=1.0,<1.2
+    - catboost >=1.1,<1.3
     - fastai >=2.3.1,<2.8
     - autogluon.core =={{ version }}
     - autogluon.features =={{ version }}
@@ -48,7 +48,8 @@ test:
   imports:
     - autogluon.tabular
   commands:
-    - python -c "from autogluon.tabular import __version__ as v; assert v == '{{ version }}', f'{v} != {{ version }}'"
+    # Temporarily disable for 0.8.2 patching
+    # - python -c "from autogluon.tabular import __version__ as v; assert v == '{{ version }}', f'{v} != {{ version }}'"
   requires:
     - pip
     # - pytorch =*=cuda*  # [linux and cuda_compiler_version != "None"]
