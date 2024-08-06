@@ -12,10 +12,10 @@ source:
 build:
   noarch: python
   # skip: true  # [py>=311]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install ./tabular -vv
   script_env:
-    - RELEASE=2
+    - RELEASE=1
 
 requirements:
   build:
