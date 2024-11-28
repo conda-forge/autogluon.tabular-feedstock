@@ -147,6 +147,7 @@ Feedstock Maintainers
 
 * [@Innixma](https://github.com/Innixma/)
 * [@giswqs](https://github.com/giswqs/)
+* [@prateekdesai04](https://github.com/prateekdesai04/)
 * [@suzhoum](https://github.com/suzhoum/)
 * [@tonyhoo](https://github.com/tonyhoo/)
 
