@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://autogluon.s3.us-west-2.amazonaws.com/tarballs/0.8.3_patch/tarball.tar.gz
-  sha256: 1ccc6834b753ad0dc1d96338d8d56ada5b86356a2d34a9e2a29c3e685af277e1
+  url: https://autogluon.s3.us-west-2.amazonaws.com/tarballs/0.8.3_patch_torch/tarball.tar.gz
+  sha256: c4d4be30b763841884701f7af49e2cd2544a41d1fc6c0d5d14267e6259c12408 
 
 build:
   noarch: python
   # skip: true  # [py>=311]
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install ./tabular -vv
   script_env:
     - RELEASE=1
@@ -36,7 +36,7 @@ requirements:
     - pandas >=1.4.1,<2.2
     - scikit-learn >=1.1,<1.5
     - networkx >=3.0,<4
-    - pytorch >=1.13,<2.1
+    - pytorch >=1.13,<2.5
     - lightgbm >=3.3,<4.7
     - xgboost >=1.6,<1.8
     - catboost >=1.1,<1.3
