@@ -33,7 +33,7 @@ requirements:
     - numpy >=1.25.0,<2.3.0
     - scipy >=1.5.4,<1.16
     - pandas >=2.0.0,<2.3.0
-    - pytorch >=2.2,<2.7   # pin lowerbound to 2.2 to avoid dependency resolution issue
+    - pytorch >=2.2,<2.8   # pin lowerbound to 2.2 to avoid dependency resolution issue
     - scikit-learn >=1.4.0,<1.7
     - networkx >=3.0,<4
     - autogluon.core =={{ version }}
