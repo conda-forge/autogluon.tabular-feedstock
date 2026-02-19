@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install ./tabular -vv
   script_env:
     - RELEASE=1
@@ -33,7 +33,7 @@ requirements:
     - numpy >=1.25.0,<2.4.0
     - scipy >=1.5.4,<1.17
     - pandas >=2.0.0,<2.4.0
-    - pytorch >=2.6,<2.10
+    - pytorch >=2.6,<2.11
     - scikit-learn >=1.4.0,<1.8.0
     - networkx >=3.0,<4
     - autogluon.core =={{ version }}
